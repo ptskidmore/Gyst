@@ -17,7 +17,7 @@ CodeSnippet::CodeSnippet(const std::string& path, int lineNumber)
 		std::getline(file, snippetLine);
 		if (std::abs(currentLine - lineNumber) <= AMOUNT_CONTEXTUAL_LINES)
 		{
-				prettyLines += snippetLine + '\n';
+			prettyLines += snippetLine + '\n';
 		}
 		currentLine++;
 	}

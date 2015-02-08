@@ -1,6 +1,5 @@
 #include "Task.hpp"
 #include <vector>
-#include <boost/date_time.hpp>
 #include "TaskStorage.hpp"
 
 std::vector<Task> TaskStorage::findTasksFor(std::string user)
@@ -27,4 +26,9 @@ std::vector<Task> TaskStorage::findTasksDueOn(int date)
 		}
 	}
 	return dateTasks;
+}
+
+void TaskStorage::store(const Task& task)
+{
+	tasks.push_back(task);
 }
