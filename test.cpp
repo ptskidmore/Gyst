@@ -5,6 +5,19 @@
 #include "TaskCreator.hpp"
 #include "TaskStorage.hpp"
 
+void prettyPrint(std::vector<Task> tasks)
+{
+	std::for_each (tasks.begin(), tasks.end(),
+		[] (const Task& e) {
+			std::cout << e.getName() << "\t\t\tAssigned to: " << e.getAssignee() << std::endl;
+			std::cout << e.getDescription() << std::endl;
+			std::cout << e.getDate() << std::endl;
+
+			std::cout << "--------------------------------------" << std::endl;
+		}
+	);
+}
+
 struct Action
 {
 	std::string description;
@@ -31,6 +44,8 @@ void tablePrint(std::vector<Action> actions)
 		[&] (const Action& e) {
 			std::cout << "| ";
 			std::cout << e.description;
+			for (int i = 0; i < maxDescLength - e.description.size(); i++)
+				std::cout << " ";
 			std::cout << " | ";
 			std::cout << e.selector;
 			std::cout << " |" << std::endl;
@@ -48,6 +63,7 @@ int main()
 {
 	std::vector<Action> availableActions;
 	availableActions.push_back({ "Create a task.", 't' }); 
+	availableActions.push_back({ "View all tasks.", 'v' });
 
 	TaskStorage tasks;
 
@@ -58,6 +74,7 @@ int main()
 
 		char action;
 		std::cin >> action;
+		std::cin.ignore(2, '\n');
 
 		switch (action)
 		{
@@ -65,7 +82,7 @@ int main()
 			tasks.store(createTask());
 			break;
 		case 'v':
-			//view tasks
+			prettyPrint(tasks.getTasks());
 			break;
 		}
 

@@ -2,6 +2,11 @@
 #include <vector>
 #include "TaskStorage.hpp"
 
+TaskStorage::TaskStorage()
+{
+
+}
+
 std::vector<Task> TaskStorage::findTasksFor(std::string user)
 {
 	std::vector<Task> userTasks;
@@ -15,12 +20,12 @@ std::vector<Task> TaskStorage::findTasksFor(std::string user)
 	return userTasks;
 }
 
-std::vector<Task> TaskStorage::findTasksDueOn(int date)
+std::vector<Task> TaskStorage::findTasksDueOn(std::string date)
 {
 	std::vector<Task> dateTasks;
 	for(int i = 0; i < tasks.size(); i++)
 	{
-		if(tasks[i].getDate() == date)
+		if(tasks[i].getDate().compare(date) == 0)
 		{
 			dateTasks.push_back(tasks[i]);
 		}
@@ -31,4 +36,9 @@ std::vector<Task> TaskStorage::findTasksDueOn(int date)
 void TaskStorage::store(const Task& task)
 {
 	tasks.push_back(task);
+}
+
+std::vector<Task> TaskStorage::getTasks() 
+{
+	return tasks;
 }
