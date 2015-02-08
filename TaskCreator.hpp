@@ -6,7 +6,7 @@
 
 class TaskCreator
 {
-	Task createTask(string name, string description, string assignee, int dueDate);
+	Task createTask(std::string name, std::string description, std::string assignee, int dueDate);
 };
 
 
