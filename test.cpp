@@ -1,8 +1,9 @@
 #include <boost/date_time.hpp>
 #include <iostream>
-#include <wx/wx.h>
+#include "CodeSnippet.hpp"
 
 int main()
 {
-	std::cout << "sdlfkjsdlfkj" << std::endl;
+	CodeSnippet snip("CodeSnippet.cpp", 9);
+	std::cout << snip.getLines() << std::endl;
 }
