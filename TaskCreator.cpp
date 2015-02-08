@@ -1,5 +1,6 @@
 #include "TaskCreator.hpp"
 #include "Task.hpp"
+#include "TaskStorage.hpp"
 #include <iostream>
 #include <string>
 
@@ -19,4 +20,11 @@ Task createTask()
 	std::string asig = query<decltype(asig)>("Who are you assigning this task to?");
 	int dueDate = query<decltype(dueDate)>("When is this task due?");
 	return Task(name, desc, asig, dueDate);	
+
+}
+
+Task TaskStorage::store(Task twoStore)
+{
+	tasks.push_back(twoStore);
+	std::vector<Tasks> tasks;
 }
