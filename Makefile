@@ -1,6 +1,5 @@
 CC=g++
 CFLAGS=-c -Wall -std=c++11 -O3
-INCLUDES=-Iinclude
 PROGNAME=gyst
 
 .PHONY: clean
