@@ -15,6 +15,7 @@ public:
 	std::string getName();
 	std::string getDescription();
 	std::string getAssignee();
+	int getDate();
 	
 };
 

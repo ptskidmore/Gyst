@@ -13,10 +13,6 @@ std::string Task::getAssignee() {
 	return assignee;
 }
 
-int Task::getdueDate() {
-	return dueDate;
-}
-
 int Task::getDate() {
 	return getDate;
 }
