@@ -5,8 +5,8 @@ PROGNAME=gyst
 
 .PHONY: clean
 
-all: test.o Task.o TaskCreator.o TaskStorage.o
-	$(CC) $(INCLUDES) test.o Task.o TaskCreator.o TaskStorage.o -o $(PROGNAME).exe
+all: test.o Task.o TaskCreator.o TaskStorage.o CodeSnippet.o
+	$(CC) $(INCLUDES) test.o Task.o TaskCreator.o TaskStorage.o CodeSnippet.o -o $(PROGNAME).exe
 
 test.o: test.cpp
 	$(CC) $(CFLAGS) $(INCLUDES) test.cpp 

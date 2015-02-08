@@ -1,8 +1,7 @@
 #include "TaskCreator.hpp"
+#include "Task.hpp"
 
 Task TaskCreator::createTask(std::string name, std::string description, std::string assignee, int dueDate)
 {
-	Task task(name, description, assignee, dueDate);
-
-	return task;	
+	return Task(name, description, assignee, dueDate);	
 }

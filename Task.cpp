@@ -1,6 +1,12 @@
 #include "Task.hpp"
 #include <iostream>
 
+Task::Task(std::string name, std::string description, std::string assignee, int dueDate)
+	: name(name), description(description), assignee(assignee), dueDate(dueDate)
+{
+
+}
+
 std::string Task::getName() {
 	return name;
 }
@@ -14,5 +20,5 @@ std::string Task::getAssignee() {
 }
 
 int Task::getDate() {
-	return getDate;
+	return dueDate;
 }

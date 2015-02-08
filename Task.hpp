@@ -10,8 +10,9 @@ private:
 	std::string description;
 	std::string assignee;
 	int dueDate;
-	Task(std::string name, std::string description, std::string assignee, int dueDate); 
+	
 public:
+	Task(std::string name, std::string description, std::string assignee, int dueDate); 
 	std::string getName();
 	std::string getDescription();
 	std::string getAssignee();

@@ -4,6 +4,7 @@
 CodeSnippet::CodeSnippet(const std::string& path, int lineNumber)
 	: lineNumber(lineNumber)
 {
+	std::ifstream file;
 	file.open(path, std::fstream::in);
 
 	const int AMOUNT_CONTEXTUAL_LINES= 3;
@@ -12,17 +13,17 @@ CodeSnippet::CodeSnippet(const std::string& path, int lineNumber)
 	while (file.is_open())
 	{
 		std::string snippetLine;
-		if (std::abs(AMOUNT_CONTEXTUAL_LINES - lineNumber) <= AMOUNT_CONTEXTUAL_LINES
+		if (std::abs(AMOUNT_CONTEXTUAL_LINES - lineNumber) <= AMOUNT_CONTEXTUAL_LINES)
 		{
 			std::getline(file, snippetLine);
 			prettyLines += snippetLine + '\n';
 		}
+		else
+		{
+			break;
+		}
 		currentLine++;
 	}
-}
-
-CodeSnippet::~CodeSnippet()
-{
 	file.close();
 }
 
