@@ -16,3 +16,7 @@ std::string Task::getAssignee() {
 int Task::getdueDate() {
 	return dueDate;
 }
+
+int Task::getDate() {
+	return getDate;
+}
