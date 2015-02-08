@@ -5,10 +5,14 @@ std::string Task::getName() {
 	return name;
 }
 
-std::string getDescription() {
+std::string Task::getDescription() {
 	return description;
 }
 
-std::string getAssignee() {
+std::string Task::getAssignee() {
 	return assignee;
+}
+
+int Task::getdueDate() {
+	return dueDate;
 }
