@@ -1,5 +1,6 @@
 #include "CodeSnippet.hpp"
 #include <cmath>
+#include <iostream>
 
 CodeSnippet::CodeSnippet(const std::string& path, int lineNumber)
 	: lineNumber(lineNumber)
@@ -7,20 +8,16 @@ CodeSnippet::CodeSnippet(const std::string& path, int lineNumber)
 	std::ifstream file;
 	file.open(path, std::fstream::in);
 
-	const int AMOUNT_CONTEXTUAL_LINES= 3;
+	const int AMOUNT_CONTEXTUAL_LINES = 3;
 	
 	int currentLine = 1;
-	while (file.is_open())
+	while (!file.eof())
 	{
 		std::string snippetLine;
-		if (std::abs(AMOUNT_CONTEXTUAL_LINES - lineNumber) <= AMOUNT_CONTEXTUAL_LINES)
+		std::getline(file, snippetLine);
+		if (std::abs(currentLine - lineNumber) <= AMOUNT_CONTEXTUAL_LINES)
 		{
-			std::getline(file, snippetLine);
-			prettyLines += snippetLine + '\n';
-		}
-		else
-		{
-			break;
+				prettyLines += snippetLine + '\n';
 		}
 		currentLine++;
 	}
