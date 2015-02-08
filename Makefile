@@ -19,6 +19,9 @@ TaskCreator.o: TaskCreator.cpp
 
 TaskStorage.o: TaskStorage.cpp
 	$(CC) $(CFLAGS) $(INCLUDES) TaskStorage.cpp
+
+CodeSnippet.o: CodeSnippet.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) CodeSnippet.cpp	
 	
 clean:
 	rm -rf *.o
