@@ -3,20 +3,20 @@
 #include <iostream>
 #include <string>
 
-template <typename T>
-T query(const std::string& question)
+std::string query(const std::string& question)
 {
 	std::cout << question << std::endl;
-	T answer;
-	std::cin >> answer;
+	std::string answer;
+	std::getline(std::cin, answer);
+	std::cin.clear();
 	return answer;
 }
 
 Task createTask()
 {
-	std::string name = query<decltype(name)>("What is the task name?");
-	std::string desc = query<decltype(desc)>("What is the task description?");
-	std::string asig = query<decltype(asig)>("Who are you assigning this task to?");
-	int dueDate = query<decltype(dueDate)>("When is this task due?");
+	std::string name = query("What is the task name?");
+	std::string desc = query("What is the task description?");
+	std::string asig = query("Who are you assigning this task to?");
+	std::string dueDate = query("When is this task due?");
 	return Task(name, desc, asig, dueDate);	
 }

@@ -9,14 +9,14 @@ private:
 	std::string name;
 	std::string description;
 	std::string assignee;
-	int dueDate;
+	std::string dueDate;
 	
 public:
-	Task(std::string name, std::string description, std::string assignee, int dueDate); 
-	std::string getName();
-	std::string getDescription();
-	std::string getAssignee();
-	int getDate();
+	Task(std::string name, std::string description, std::string assignee, std::string dueDate); 
+	std::string getName() const;
+	std::string getDescription() const;
+	std::string getAssignee() const;
+	std::string getDate() const;
 	
 };
 
