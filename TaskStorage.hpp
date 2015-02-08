@@ -7,6 +7,7 @@ class TaskStorage
 	std::vector<Task> tasks;
 	std::vector<Task> findTasksFor(std::string user);
 	std::vector<Task> findTasksDueOn(int date);
+	Task store();
 };
 
 #endif
